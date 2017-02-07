@@ -1,6 +1,6 @@
-# Jira Board Issues
+# Web Command Line
 
-Simple module - to make request to jira api, and recieve issues
+Simple server to execute bash commands locally
 
 ## Table of Contents
 
@@ -16,7 +16,7 @@ Clone repository, install pm2, configure, run index.js
 
 Example request:
 ```
-    YOUR_ADRESS:4747/api/kanban?boardId=229&jql=assignee%20=%20currentUser()
+    YOUR_ADRESS:4949/api/kanban?boardId=229&jql=assignee%20=%20currentUser()
 ```
 jql is currently mandatory
 
