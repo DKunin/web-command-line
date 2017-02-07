@@ -16,9 +16,14 @@ Clone repository, install pm2, configure, run index.js
 
 Example request:
 ```
-    YOUR_ADRESS:4949/api/kanban?boardId=229&jql=assignee%20=%20currentUser()
+    YOUR_ADRESS:4949/command/:commandName?options=options
 ```
-jql is currently mandatory
+
+If you don't need a response:
+```
+    YOUR_ADRESS:4949/silent/:commandName?options=options
+```
+
 
 ## License
 
