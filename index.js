@@ -16,7 +16,7 @@ app.use(function(req, res, next) {
 });
 
 app.get('/command/:command', function(req, res) {
-    const { options } = req.query;
+    let { options = '' } = req.query;
     const command = path.normalize(req.params.command.replace(/_/g, '/').replace(/\s/g, '\\ '));
     options = options.replace(/_/g, '/').replace(/\s/g, '\\ ');
     execa.shell(command + ' ' + (options ? options : ''))
@@ -24,7 +24,7 @@ app.get('/command/:command', function(req, res) {
 });
 
 app.get('/silent/:command', function(req, res) {
-    let { options } = req.query;
+    let { options = '' } = req.query;
     const command = path.normalize(req.params.command.replace(/_/g, '/').replace(/\s/g, '\\ '));
     options = options.replace(/_/g, '/').replace(/\s/g, '\\ ');
     execa.shell(command + ' ' + (options ? options : ''))
