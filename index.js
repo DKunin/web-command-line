@@ -4,7 +4,7 @@ const express = require('express');
 const execa = require('execa');
 const path = require('path');
 const app = express();
-const port = 4949;
+const port = 8080;
 
 app.use(function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
@@ -19,7 +19,6 @@ app.get('/command/:command', function(req, res) {
     let { options = '' } = req.query;
     const command = path.normalize(req.params.command.replace(/_/g, '/').replace(/\s/g, '\\ '));
     options = options.replace(/_/g, '/').replace(/\s/g, '\\ ');
-    console.log(command, options);
     execa.shell(command + ' ' + (options ? options : ''))
         .then(result => res.send(result.stdout));
 });
@@ -34,4 +33,4 @@ app.get('/silent/:command', function(req, res) {
 
 app.listen(port);
 
-console.log(`Listening on port ${port}`);
+console.log(`http://localhost:${port}/command/echo?options=test`);

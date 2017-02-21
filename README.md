@@ -10,7 +10,10 @@ Simple server to execute bash commands locally
 
 ## Install
 
-Clone repository, install pm2, configure, run index.js
+```console
+    docker build ./ -t username/web-command-line
+    docker run -p 4949:8080 -d username/web-command-line
+```
 
 ## Usage
 
@@ -23,7 +26,6 @@ If you don't need a response:
 ```
     YOUR_ADRESS:4949/silent/:commandName?options=options
 ```
-
 
 ## License
 

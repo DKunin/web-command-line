@@ -4,7 +4,10 @@
   "description": "Run bash commands from web service",
   "main": "./index.js",
   "repository": {},
-  "scripts": {},
+  "scripts": {
+    "start": "node ./",
+    "pretty": "prettier ./*.js --single-quote --tab-width 4 --write"
+  },
   "author": "DKunin",
   "license": "MIT",
   "dependencies": {
