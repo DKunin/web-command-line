@@ -4,7 +4,7 @@ const express = require('express');
 const execa = require('execa');
 const path = require('path');
 const app = express();
-const port = 8080;
+const port = 4949;
 
 app.use(function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
